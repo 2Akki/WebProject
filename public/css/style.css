@@ -295,4 +295,10 @@ sup{
     img {
         width: auto;
     }
+    .temp_form{
+        width:auto;
+    }
+    .tempInformation{
+        width:auto;
+    }
 }
