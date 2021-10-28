@@ -15,12 +15,25 @@ const getInfo = async(event)=>{
         data_hide.classList.add("data_hide")
     }else{
         try{
-        let url =`https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&appid=1788a8c8c7d0aa49553c7e705bbb83ca`
+        let url =`https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=1788a8c8c7d0aa49553c7e705bbb83ca`
         const responce = await fetch(url) 
         const data = await responce.json()
         const arrData =[data]
 
         tempReal_val.innerText = arrData[0].main.temp
+        // Temparture = arrData[0].main.temp
+        // Data_temp =(Temparture - 32) *.8
+        // Divided_Answer_Temp = Math.trunc(Data_temp) 
+        // Divided_Answer_Temp = Math.trunc(Data_temp)  
+        // Divided_Answer_Temp2 = Divided_Answer_Temp /10
+        // AA= Math.floor(Divided_Answer_Temp2)
+        // console.log(AA)
+        
+       
+    //    const  lenht = length(Divided_Answer_Temp) 
+        // console.log(Divided_Answer_Temp)
+        
+        
  
         city_name.innerText =`${arrData[0].name},${arrData[0].sys.country} `
         const tempmood = arrData[0].weather[0].main  
@@ -39,6 +52,7 @@ const getInfo = async(event)=>{
         }catch(err){
             city_name.innerText =`Plz write the city name probebly`
             data_hide.classList.add("data_hide")
+            console.log(err)
         }
     }
 }

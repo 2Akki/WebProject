@@ -303,3 +303,9 @@ sup{
     }
     
 }
+@media(max-width:1424px){
+    img {
+        width: 372px;
+ 
+    }
+}
